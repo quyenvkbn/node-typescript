@@ -1,6 +1,6 @@
 import { Model, ModelCtor } from 'sequelize-typescript';
-import { IRepo } from "./interface.base.repository";
-import { RepoError, Result } from "./response";
+import { IRepo } from "@/app/repositories/interface.base.repository";
+import { RepoError, Result } from "@/app/repositories/response";
 
 export default abstract class Repo<M extends Model> implements IRepo<M> {
   protected Model!: ModelCtor<M>;

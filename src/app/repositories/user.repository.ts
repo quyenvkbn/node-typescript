@@ -1,5 +1,5 @@
-import BaseRepository from './base.repository';
-import {User} from '../models/user.model';
+import BaseRepository from '@/app/repositories/base.repository';
+import {User} from '@/app/models/user.model';
 import { Model } from 'sequelize-typescript';
 
 class UserRepository extends BaseRepository<User> {

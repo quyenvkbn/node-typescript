@@ -1,18 +1,17 @@
 import express, { Express } from 'express';
 import { engine } from 'express-handlebars';
 import dotenv from 'dotenv';
-import logger from './app/middleware/log.js';
-import routers from './routes/index.js';
+import logger from '@/app/middleware/log';
+import routers from '@/routes/index';
 import path from 'path';
 
 dotenv.config();
 const port = process.env.PORT;
-const __dirname = path.resolve();
 
 const app: Express = express();
 app.engine('.hbs', engine({extname: '.hbs'}));
 app.set('view engine', '.hbs');
-app.set('views', path.join(__dirname + '/src', 'views'));
+app.set('views', path.join(__dirname, 'views'));
 logger(app);
 routers(app);
 

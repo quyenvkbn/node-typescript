@@ -1,4 +1,4 @@
-import { RepoError, Result } from "./response";
+import { RepoError, Result } from "@/app/repositories/response";
 
 export type RepoResult<M> = Promise<Result<M | undefined, RepoError | undefined>>;
 

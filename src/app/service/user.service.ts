@@ -1,4 +1,4 @@
-import UserRepository from '../repositories/user.repository';
+import UserRepository from '@/app/repositories/user.repository';
 
 class UserService{
     async getAll(): Promise<any|undefined>

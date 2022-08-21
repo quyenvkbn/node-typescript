@@ -1,4 +1,4 @@
-import { sequelize } from '.'
+import { sequelize } from '@/app/models'
 import { Optional } from 'sequelize'
 import { Table, Model, Column, DefaultScope } from 'sequelize-typescript'
 
