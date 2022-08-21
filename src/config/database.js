@@ -1,4 +1,4 @@
-const config: any = {
+let database = {
   "development": {
     "username": "root",
     "password": "root",
@@ -20,5 +20,7 @@ const config: any = {
     "host": "127.0.0.1",
     "dialect": "mysql"
   }
-}
-export default config
+};
+const env = process.env.NODE_ENV || 'development';
+
+export default database[env];

@@ -1,15 +1,14 @@
-import express, { Express, Request, Response } from 'express';
-import db from '../src/models/index';
-console.log(await (await db).User.findAll());
+import express, { Express } from 'express';
 import dotenv from 'dotenv';
+import logger from './app/middleware/log.js';
+import routers from './routes/index.js';
+
 dotenv.config();
 
 const app: Express = express();
 const port = process.env.PORT;
-
-app.get('/', (req: Request, res: Response) => {
-    res.send('Express + TypeScript Server');
-});
+logger(app);
+routers(app);
 
 app.listen(port, () => {
     console.log(`⚡️[server]: Server is running at https://localhost:${port}`);
